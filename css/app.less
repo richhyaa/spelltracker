@@ -18,6 +18,7 @@ body
     {  
         margin:0;
         padding:10px;
+        border-right:1px solid @black;
         float:left;
         font-family:@label-font;
         font-size:24px;
@@ -25,16 +26,26 @@ body
     }
     .button
     {
+        padding:0 15px;
+        border:2px solid transparent;
+        border-bottom:2px solid @black;
+        line-height:52px;
+        vertical-align:middle;
+        font-family: @label-font;
+        cursor:pointer;
+        &.left
+        {
+            float:left;
+            border-right:1px solid @black;
+            &:hover
+            {
+                color:#666;
+            }
+        }
         &.right
         {
             float:right;
-            padding:0 15px;
-            border:2px solid transparent;
             border-left:1px solid @black;
-            border-bottom:2px solid @black;
-            line-height:52px;
-            vertical-align:middle;
-            cursor:pointer;
             &:hover
             {
                 color:#666;
@@ -63,7 +74,7 @@ body
             padding:10px;
             background:#f5f1d8;
         }
-        &.backupUrl
+        &.importCode
         {
             text-align:center;
             input[type="text"]

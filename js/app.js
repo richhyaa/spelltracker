@@ -11,14 +11,15 @@ var slotValues =
        9: [0, 0]
     };
 
-var saveUrl = "";
+var saveCode = "";
 
 //Events
 $(document).ready(function () {
 
+    //Hide All SubBars
     $('.navSubBar').hide();
 
-    readSaveUrl();
+    readSaveCode();
 
     updateFullSlotView();
 
@@ -37,35 +38,35 @@ $(document).ready(function () {
         var slotLevel = $(this).parents('.slot').data('slot-level');
         setSlotUse(slotLevel, 'less');
         updateSlotView(getSlotLevel(this));
-        writeSaveUrl();
+        writeSaveCode();
     });
 
     //More Click
     $('.more').click(function () {
         setSlotUse(getSlotLevel(this), 'more');
         updateSlotView(getSlotLevel(this));
-        writeSaveUrl();
+        writeSaveCode();
     });
 
     //Use Field FocusOut
     $('.useValue').blur(function () {
         editSlotUseValue(getSlotLevel(this));
         updateSlotView(getSlotLevel(this));
-        writeSaveUrl();
+        writeSaveCode();
     });
 
     //Max Field FocusOut
     $('.maxValue').blur(function () {
         editSlotMaxValue(getSlotLevel(this));
         updateSlotView(getSlotLevel(this));
-        writeSaveUrl();
+        writeSaveCode();
     });
 
     //Long Rest
     $('.long-rest').click(function () {
         setSlotUseToMax();
         updateFullSlotView();
-        writeSaveUrl();
+        writeSaveCode();
     });
 
     //Save Button
@@ -199,70 +200,41 @@ function showUnusedSlots(show)
 function saveButtonDisplay()
 {
     if ($('#subBarSave').is(":visible")) {
-        $('.navSubBar').hide();
+        $('#subBarSave').hide();
         $('#saveButton').css('border-bottom', '2px solid #121212');
         $('#saveButton').css('border-right', '2px solid transparent');
     }
     else {
-        writeSaveUrl();
-        $('.navSubBar').show();
+        writeSaveCode();
+        $('#subBarSave').show();
         $('#saveButton').css('border-bottom', '2px solid #fff');
         $('#saveButton').css('border-right', '2px solid #fff');
     }
 }
 
-function writeSaveUrl()
+function writeSaveCode()
 {
-
-    saveUrl = "http://richhyaa.github.io/spelltracker5E/?ss=";
-    var ss = "";
-
     for (i = 1; i <= 9; i++)
     {
-        if (i > 1) ss += "_";
-        ss = ss +
+        if (i > 1) saveCode += "_";
+        saveCode = saveCode +
             getSlotUse(i).toString() + "." +
             getSlotMax(i).toString();
     }
 
-    $('.saveUrlField').val(saveUrl + ss);
-    Cookies.set('spellTrackerSS', ss);
+    $('.saveCodeField').val(saveCode);
+    Cookies.set('spellTrackerSS', saveCode);
 }
 
-function readSaveUrl()
+function readSaveCode()
 {
-
-    var ssQS = getParameterByName("ss", window.location.href);
-    if (ssQS != null) {
-        var ssList = ssQS.split("_");
+    var ssCookie = Cookies.get('spellTrackerSS');
+    if (ssCookie != undefined) {
+        var ssList = ssCookie.split("_");
         for (i = 1; i <= 9; i++) {
             var ssValue = ssList[i - 1].split(".");
             slotValues[i][0] = parseInt(ssValue[0]);
             slotValues[i][1] = parseInt(ssValue[1]);
         }
     }
-    else
-    {
-        var ssCookie = Cookies.get('spellTrackerSS');
-        if (ssCookie != undefined)
-        {
-            var ssList = ssCookie.split("_");
-            for (i = 1; i <= 9; i++) {
-                var ssValue = ssList[i - 1].split(".");
-                slotValues[i][0] = parseInt(ssValue[0]);
-                slotValues[i][1] = parseInt(ssValue[1]);
-            }
-        }
-    }
-}
-
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    url = url.toLowerCase(); // This is just to avoid case sensitiveness  
-    name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

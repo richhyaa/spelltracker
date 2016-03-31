@@ -11,20 +11,31 @@
 .navBar h1 {
   margin: 0;
   padding: 10px;
+  border-right: 1px solid #1e1e1e;
   float: left;
   font-family: 'Noto Serif', serif;
   font-size: 24px;
   font-weight: 300;
 }
-.navBar .button.right {
-  float: right;
+.navBar .button {
   padding: 0 15px;
   border: 2px solid transparent;
-  border-left: 1px solid #1e1e1e;
   border-bottom: 2px solid #1e1e1e;
   line-height: 52px;
   vertical-align: middle;
+  font-family: 'Noto Serif', serif;
   cursor: pointer;
+}
+.navBar .button.left {
+  float: left;
+  border-right: 1px solid #1e1e1e;
+}
+.navBar .button.left:hover {
+  color: #666;
+}
+.navBar .button.right {
+  float: right;
+  border-left: 1px solid #1e1e1e;
 }
 .navBar .button.right:hover {
   color: #666;
@@ -47,10 +58,10 @@
   padding: 10px;
   background: #f5f1d8;
 }
-.navSubBar p.backupUrl {
+.navSubBar p.importCode {
   text-align: center;
 }
-.navSubBar p.backupUrl input[type="text"] {
+.navSubBar p.importCode input[type="text"] {
   width: 340px;
   padding: 5px;
 }

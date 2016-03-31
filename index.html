@@ -1,7 +1,8 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-    <title>Spell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D5E Spell Tracker</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -16,6 +17,9 @@
         <h1>
             D&D5E Spell Tracker
         </h1>
+        <a class="button left" id="importButton">
+            Import
+        </a>
         <a class="button right" id="saveButton">
             <i class="fa fa-floppy-o fa-2x"></i>
         </a>
@@ -23,11 +27,23 @@
     <div class="navSubBar" id="subBarSave">
         <p class="info">
             Spell Tracker automatically saves your spell slots with cookies,
-            but you may want to consider saving the "Backup URL" below.
+            but you may want to consider saving the "Import Code" below.
         </p>
-        <p class="backupUrl">
-            Backup URL:
-            <input type="text" class="saveUrlField"
+        <p class="importCode">
+            Import Code:
+            <input type="text" class="saveCodeField"
+                   onclick="this.setSelectionRange(0, this.value.length);" />
+        </p>
+    </div>
+
+    <div class="navSubBar" id="subBarImport">
+        <p class="info">
+            Spell Tracker automatically saves your spell slots with cookies,
+            but you may want to consider saving the "Import Code" below.
+        </p>
+        <p class="importCode">
+            Import Code:
+            <input type="text" class="saveCodeField"
                    onclick="this.setSelectionRange(0, this.value.length);" />
         </p>
     </div>
