@@ -4,117 +4,118 @@
 
 body
 {
+    background:#59a9d1;
     min-width:480px;
 }
 
-.navBar
+.nav-container
 {
-    height:54px;
-    width:100%;
-    border-bottom:2px solid @black;
-    h1
-    {  
-        margin:0;
-        padding:10px;
-        border-right:1px solid @black;
-        float:left;
-        font-family:@label-font;
-        font-size:24px;
-        font-weight:300;
-    }
-    .button
+    background:#fff;
+    .navBar
     {
-        padding:0 15px;
-        border:2px solid transparent;
+        height:54px;
+        width:100%;
         border-bottom:2px solid @black;
-        line-height:52px;
-        vertical-align:middle;
-        font-family: @label-font;
-        cursor:pointer;
-        &.left
-        {
-            float:left;
+        h1
+        {  
+            margin:0;
+            padding:10px;
             border-right:1px solid @black;
-            &:hover
-            {
-                color:#666;
-            }
+            float:left;
+            font-family:@label-font;
+            font-size:24px;
+            font-weight:300;
         }
-        &.right
+        .button
         {
-            float:right;
-            border-left:1px solid @black;
-            &:hover
+            padding:0 15px;
+            border:2px solid transparent;
+            border-bottom:2px solid @black;
+            line-height:52px;
+            vertical-align:middle;
+            font-family: @label-font;
+            cursor:pointer;
+            &.left
             {
-                color:#666;
+                float:left;
+                border-right:1px solid @black;
+                &:hover
+                {
+                    color:#666;
+                }
             }
-            i
+            &.right
             {
-                position:relative;
-                top:4px;
-                left:2px;
+                float:right;
+                border-left:1px solid @black;
+                &:hover
+                {
+                    color:#666;
+                }
+                i
+                {
+                    position:relative;
+                    top:4px;
+                    left:2px;
+                }
             }
         }
     }
-}
-
-.navSubBar
-{
-    width:100%; 
-    border-bottom:2px solid @black;
-    p
+    .navSubBar
     {
-        font-family: @label-font;
-        margin:10px 10px 1em;
-        &.info
+        width:100%; 
+        border-bottom:2px solid @black;
+        p
         {
-            padding:10px;
-            background:#f5f1d8;
-        }
-        &.importCode
-        {
-            text-align:center;
-            input[type="text"]
+            font-family: @label-font;
+            margin:10px 10px 1em;
+            &.info
             {
-                width: 340px;
-                padding:5px;
+                padding:10px;
+                background:#f5f1d8;
             }
-
-        }
-        &.loadCode
-        {
-            text-align:center;
-            input[type="text"]
+            &.importCode
             {
-                width: 240px;
-                padding:5px;
-                @media only screen and (min-width : 590px) 
+                text-align:center;
+                input[type="text"]
                 {
                     width: 340px;
+                    padding:5px;
                 }
-            }       
-        }
-        #importButton
-        {
-            display:inline-block;
-            padding:7px 15px;
-            background:#26b73b;
-            color:#fff;
-            cursor:pointer;
-            &:hover
+
+            }
+            &.loadCode
             {
-                background:#333;
+                text-align:center;
+                input[type="text"]
+                {
+                    width: 240px;
+                    padding:5px;
+                    @media only screen and (min-width : 590px) 
+                    {
+                        width: 340px;
+                    }
+                }       
+            }
+            #importButton
+            {
+                display:inline-block;
+                padding:7px 15px;
+                background:#26b73b;
+                color:#fff;
+                cursor:pointer;
+                &:hover
+                {
+                    background:#333;
+                }
             }
         }
+
     }
-
 }
-
 .slot-container
 {
     padding:5px 0;
-    background:#59a9d1;
-
     .hide-button
     {
         font-family:@label-font;
@@ -123,7 +124,7 @@ body
 
     .spellslots
     {
-        width:440px;
+        width:446px;
         margin:0 auto;
         .menu
         {
@@ -150,8 +151,8 @@ body
 
     .slot
     {
-        height:62px;
-        width:422px;
+        height:72px;
+        width:442px;
         background:#ffffff;
         border:2px solid @black;
         border-top:6px solid @black;
@@ -160,16 +161,16 @@ body
         .level
         {
             float:left;   
-            width:60px;
+            width:70px;
             color:#fff;
             background:@black;
             text-align:center;
-            line-height:62px;
+            line-height:72px;
             font-family: @label-font;
             font-size:40px;
         }
 
-            .use
+        .use
             {
                 width:300px;
                 border-left:1px solid @black;
@@ -199,7 +200,7 @@ body
                         width:20%;
                         float:left;
                         cursor:pointer;
-                        line-height:50px;
+                        line-height:60px;
                          &:hover
                         {
                             color:#333;
@@ -214,7 +215,7 @@ body
                         display:block;
                         float:left;
                         width:60%;
-                        line-height:50px;
+                        line-height:60px;
                         font-family: @number-font;
                         .useValue
                         {
@@ -231,10 +232,10 @@ body
                 }
             }
 
-            .max
+        .max
             {
-                height:62px;
-                width:60px;
+                height:72px;
+                width:70px;
                 margin:0 auto;
                 float:left;
                 font-size:16px;
