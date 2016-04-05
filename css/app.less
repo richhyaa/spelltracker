@@ -4,7 +4,6 @@
 
 body
 {
-    background:#fff;
     min-width:480px;
 }
 
@@ -12,7 +11,6 @@ body
 {
     height:54px;
     width:100%;
-    margin-bottom:5px;
     border-bottom:2px solid @black;
     h1
     {  
@@ -64,7 +62,6 @@ body
 {
     width:100%; 
     border-bottom:2px solid @black;
-    margin-bottom:5px;
     p
     {
         font-family: @label-font;
@@ -113,150 +110,156 @@ body
 
 }
 
-.hide-button
+.slot-container
 {
-    font-family:@label-font;
-    margin:0 10px 40px;   
-}
+    padding:5px 0;
+    background:#59a9d1;
 
-.spellslots
-{
-    width:440px;
-    margin:0 auto;
-    .menu
+    .hide-button
     {
         font-family:@label-font;
+        margin:0 10px 40px;
+    }
 
-        .rest-button
+    .spellslots
+    {
+        width:440px;
+        margin:0 auto;
+        .menu
         {
-            margin-bottom:10px;   
-            .long-rest
+            font-family:@label-font;
+
+            .rest-button
             {
-                display:inline-block;
-                padding:10px 15px;
-                background:#2d3ebf;
-                color:#fff;
-                cursor:pointer;
-                &:hover
+                margin-bottom:10px;   
+                .long-rest
                 {
-                    background:#333;
+                    display:inline-block;
+                    padding:10px 15px;
+                    background:#2d3ebf;
+                    color:#fff;
+                    cursor:pointer;
+                    &:hover
+                    {
+                        background:#333;
+                    }
                 }
             }
         }
     }
-}
 
-.slot
-{
-    height:62px;
-    width:422px;
-    background:#ffffff;
-    border:2px solid @black;
-    border-top:6px solid @black;
-    margin-bottom:12px;
-
-    .level
+    .slot
     {
-        float:left;   
-        width:60px;
-        color:#fff;
-        background:@black;
-        text-align:center;
-        line-height:62px;
-        font-family: @label-font;
-        font-size:40px;
-    }
+        height:62px;
+        width:422px;
+        background:#ffffff;
+        border:2px solid @black;
+        border-top:6px solid @black;
+        margin-bottom:12px;
 
-        .use
+        .level
         {
-            width:300px;
-            border-left:1px solid @black;
-            border-right:1px solid @black;
-            float:left;
+            float:left;   
+            width:60px;
+            color:#fff;
+            background:@black;
             text-align:center;
-            .barMax
+            line-height:62px;
+            font-family: @label-font;
+            font-size:40px;
+        }
+
+            .use
             {
-                height:10px;
-                background:#fff;
-                border-bottom:2px solid @black;
-                .bar
+                width:300px;
+                border-left:1px solid @black;
+                border-right:1px solid @black;
+                float:left;
+                text-align:center;
+                .barMax
                 {
                     height:10px;
-                    width:100%;
-                    background:#0fff8a;
+                    background:#fff;
+                    border-bottom:2px solid @black;
+                    .bar
+                    {
+                        height:10px;
+                        width:100%;
+                        background:#0fff8a;
 
-                }
-            }
-            .number
-            {
-                /*line-height:36px;*/
-                .less, .more
-                {
-                    color:@black;
-                    display:block;
-                    width:20%;
-                    float:left;
-                    cursor:pointer;
-                    line-height:50px;
-                     &:hover
-                    {
-                        color:#333;
-                    }
-                    .fa
-                    {
-                        vertical-align:middle;                 
                     }
                 }
-                .value
+                .number
                 {
-                    display:block;
-                    float:left;
-                    width:60%;
-                    line-height:50px;
-                    font-family: @number-font;
-                    .useValue
+                    /*line-height:36px;*/
+                    .less, .more
                     {
-                        display:inline-block;
-                        border:0;
-                        width:80px;
-                        line-height:24px;
-                        text-align:center;
-                        vertical-align:middle;
-                        font-size:24px;
+                        color:@black;
+                        display:block;
+                        width:20%;
+                        float:left;
+                        cursor:pointer;
+                        line-height:50px;
+                         &:hover
+                        {
+                            color:#333;
+                        }
+                        .fa
+                        {
+                            vertical-align:middle;                 
+                        }
+                    }
+                    .value
+                    {
+                        display:block;
+                        float:left;
+                        width:60%;
+                        line-height:50px;
                         font-family: @number-font;
+                        .useValue
+                        {
+                            display:inline-block;
+                            border:0;
+                            width:80px;
+                            line-height:24px;
+                            text-align:center;
+                            vertical-align:middle;
+                            font-size:24px;
+                            font-family: @number-font;
+                        }
                     }
                 }
             }
-        }
 
-        .max
-        {
-            height:62px;
-            width:60px;
-            margin:0 auto;
-            float:left;
-            font-size:16px;
-            line-height:20px;
-            text-align:center;
-            h3
+            .max
             {
-                margin:5px 0 0;
-                font-family: @number-font;        
+                height:62px;
+                width:60px;
+                margin:0 auto;
+                float:left;
                 font-size:16px;
-                font-weight:300;
-            }
-            .maxValue
-            {
-                border:0;
-                width:40px;
-                font-size:24px;
+                line-height:20px;
                 text-align:center;
-                font-family: @number-font;
+                h3
+                {
+                    margin:5px 0 0;
+                    font-family: @number-font;        
+                    font-size:16px;
+                    font-weight:300;
+                }
+                .maxValue
+                {
+                    border:0;
+                    width:40px;
+                    font-size:24px;
+                    text-align:center;
+                    font-family: @number-font;
+                }
             }
-        }
     
-}
+    }
 
+}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

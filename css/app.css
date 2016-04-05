@@ -1,11 +1,9 @@
 ﻿body {
-  background: #fff;
   min-width: 480px;
 }
 .navBar {
   height: 54px;
   width: 100%;
-  margin-bottom: 5px;
   border-bottom: 2px solid #1e1e1e;
 }
 .navBar h1 {
@@ -48,7 +46,6 @@
 .navSubBar {
   width: 100%;
   border-bottom: 2px solid #1e1e1e;
-  margin-bottom: 5px;
 }
 .navSubBar p {
   font-family: 'Noto Serif', serif;
@@ -87,31 +84,35 @@
 .navSubBar p #importButton:hover {
   background: #333;
 }
-.hide-button {
+.slot-container {
+  padding: 5px 0;
+  background: #59a9d1;
+}
+.slot-container .hide-button {
   font-family: 'Noto Serif', serif;
   margin: 0 10px 40px;
 }
-.spellslots {
+.slot-container .spellslots {
   width: 440px;
   margin: 0 auto;
 }
-.spellslots .menu {
+.slot-container .spellslots .menu {
   font-family: 'Noto Serif', serif;
 }
-.spellslots .menu .rest-button {
+.slot-container .spellslots .menu .rest-button {
   margin-bottom: 10px;
 }
-.spellslots .menu .rest-button .long-rest {
+.slot-container .spellslots .menu .rest-button .long-rest {
   display: inline-block;
   padding: 10px 15px;
   background: #2d3ebf;
   color: #fff;
   cursor: pointer;
 }
-.spellslots .menu .rest-button .long-rest:hover {
+.slot-container .spellslots .menu .rest-button .long-rest:hover {
   background: #333;
 }
-.slot {
+.slot-container .slot {
   height: 62px;
   width: 422px;
   background: #ffffff;
@@ -119,7 +120,7 @@
   border-top: 6px solid #1e1e1e;
   margin-bottom: 12px;
 }
-.slot .level {
+.slot-container .slot .level {
   float: left;
   width: 60px;
   color: #fff;
@@ -129,28 +130,28 @@
   font-family: 'Noto Serif', serif;
   font-size: 40px;
 }
-.slot .use {
+.slot-container .slot .use {
   width: 300px;
   border-left: 1px solid #1e1e1e;
   border-right: 1px solid #1e1e1e;
   float: left;
   text-align: center;
 }
-.slot .use .barMax {
+.slot-container .slot .use .barMax {
   height: 10px;
   background: #fff;
   border-bottom: 2px solid #1e1e1e;
 }
-.slot .use .barMax .bar {
+.slot-container .slot .use .barMax .bar {
   height: 10px;
   width: 100%;
   background: #0fff8a;
 }
-.slot .use .number {
+.slot-container .slot .use .number {
   /*line-height:36px;*/
 }
-.slot .use .number .less,
-.slot .use .number .more {
+.slot-container .slot .use .number .less,
+.slot-container .slot .use .number .more {
   color: #1e1e1e;
   display: block;
   width: 20%;
@@ -158,22 +159,22 @@
   cursor: pointer;
   line-height: 50px;
 }
-.slot .use .number .less:hover,
-.slot .use .number .more:hover {
+.slot-container .slot .use .number .less:hover,
+.slot-container .slot .use .number .more:hover {
   color: #333;
 }
-.slot .use .number .less .fa,
-.slot .use .number .more .fa {
+.slot-container .slot .use .number .less .fa,
+.slot-container .slot .use .number .more .fa {
   vertical-align: middle;
 }
-.slot .use .number .value {
+.slot-container .slot .use .number .value {
   display: block;
   float: left;
   width: 60%;
   line-height: 50px;
   font-family: 'Roboto Condensed', sans-serif;
 }
-.slot .use .number .value .useValue {
+.slot-container .slot .use .number .value .useValue {
   display: inline-block;
   border: 0;
   width: 80px;
@@ -183,7 +184,7 @@
   font-size: 24px;
   font-family: 'Roboto Condensed', sans-serif;
 }
-.slot .max {
+.slot-container .slot .max {
   height: 62px;
   width: 60px;
   margin: 0 auto;
@@ -192,13 +193,13 @@
   line-height: 20px;
   text-align: center;
 }
-.slot .max h3 {
+.slot-container .slot .max h3 {
   margin: 5px 0 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
-.slot .max .maxValue {
+.slot-container .slot .max .maxValue {
   border: 0;
   width: 40px;
   font-size: 24px;
