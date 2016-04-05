@@ -19,7 +19,7 @@ $(document).ready(function () {
     //Hide All SubBars
     $('.navSubBar').hide();
 
-    readSaveCode();
+    readSaveCode(Cookies.get('spellTrackerSS'));
 
     updateFullSlotView();
 
@@ -69,9 +69,20 @@ $(document).ready(function () {
         writeSaveCode();
     });
 
-    //Save Button
-    $("#saveButton").click(function () {
+    //Save Nav Button
+    $("#saveNavButton").click(function () {
         saveButtonDisplay();
+    });
+
+    //Import Nav Button
+    $("#importNavButton").click(function () {
+        importButtonDisplay();
+    });
+
+    //Import Button
+    $("#importButton").click(function () {
+        readSaveCode($('#importCodeField').val());
+        updateFullSlotView();
     });
 });
 
@@ -197,23 +208,43 @@ function showUnusedSlots(show)
     }
 }
 
+
 function saveButtonDisplay()
 {
+    if (getVisibility('#subBarImport')) importButtonDisplay();
     if ($('#subBarSave').is(":visible")) {
         $('#subBarSave').hide();
-        $('#saveButton').css('border-bottom', '2px solid #121212');
-        $('#saveButton').css('border-right', '2px solid transparent');
+        $('#saveNavButton').css('border-bottom', '2px solid #121212');
+        $('#saveNavButton').css('border-right', '2px solid transparent');
     }
     else {
         writeSaveCode();
         $('#subBarSave').show();
-        $('#saveButton').css('border-bottom', '2px solid #fff');
-        $('#saveButton').css('border-right', '2px solid #fff');
+        $('#saveNavButton').css('border-bottom', '2px solid #fff');
+        $('#saveNavButton').css('border-right', '2px solid #fff');
+    }
+}
+
+function importButtonDisplay() {
+    if (getVisibility('#subBarSave')) saveButtonDisplay();
+    if ($('#subBarImport').is(":visible")) {
+        $('#subBarImport').hide();
+        $('#importNavButton').css('border-bottom', '2px solid #121212');
+        $('#importNavButton').css('border-left', '2px solid transparent');
+    }
+    else {
+        $('#subBarImport').show();
+        $('#importNavButton').css('border-bottom', '2px solid #fff');
+        $('#importNavButton').css('border-left', '2px solid #fff');
     }
 }
 
 function writeSaveCode()
 {
+    //reset saveCode
+    saveCode = "";
+
+    //write from slotValues
     for (i = 1; i <= 9; i++)
     {
         if (i > 1) saveCode += "_";
@@ -226,15 +257,22 @@ function writeSaveCode()
     Cookies.set('spellTrackerSS', saveCode);
 }
 
-function readSaveCode()
+function readSaveCode(ssCode)
 {
-    var ssCookie = Cookies.get('spellTrackerSS');
-    if (ssCookie != undefined) {
-        var ssList = ssCookie.split("_");
+    if (ssCode != undefined) {
+        var ssList = ssCode.split("_");
         for (i = 1; i <= 9; i++) {
             var ssValue = ssList[i - 1].split(".");
+            //Current
             slotValues[i][0] = parseInt(ssValue[0]);
+
+            //Max
             slotValues[i][1] = parseInt(ssValue[1]);
         }
     }
+}
+
+
+function getVisibility(element) {
+    return $(element).is(":visible");
 }

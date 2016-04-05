@@ -82,6 +82,32 @@ body
                 width: 340px;
                 padding:5px;
             }
+
+        }
+        &.loadCode
+        {
+            text-align:center;
+            input[type="text"]
+            {
+                width: 240px;
+                padding:5px;
+                @media only screen and (min-width : 590px) 
+                {
+                    width: 340px;
+                }
+            }       
+        }
+        #importButton
+        {
+            display:inline-block;
+            padding:7px 15px;
+            background:#26b73b;
+            color:#fff;
+            cursor:pointer;
+            &:hover
+            {
+                background:#333;
+            }
         }
     }
 

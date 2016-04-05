@@ -17,10 +17,10 @@
         <h1>
             D&D5E Spell Tracker
         </h1>
-        <a class="button left" id="importButton">
+        <a class="button left" id="importNavButton">
             Import
         </a>
-        <a class="button right" id="saveButton">
+        <a class="button right" id="saveNavButton">
             <i class="fa fa-floppy-o fa-2x"></i>
         </a>
     </div>
@@ -38,13 +38,12 @@
 
     <div class="navSubBar" id="subBarImport">
         <p class="info">
-            Spell Tracker automatically saves your spell slots with cookies,
-            but you may want to consider saving the "Import Code" below.
+            Input an import code and press the "Load" Button to load your save.
         </p>
-        <p class="importCode">
+        <p class="loadCode">
             Import Code:
-            <input type="text" class="saveCodeField"
-                   onclick="this.setSelectionRange(0, this.value.length);" />
+            <input type="text" id="importCodeField" />
+            <a id="importButton"><i class="fa fa-eject"></i> Load</a>
         </p>
     </div>
 
