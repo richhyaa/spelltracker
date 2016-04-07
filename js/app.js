@@ -254,7 +254,7 @@ function writeSaveCode()
     }
 
     $('.saveCodeField').val(saveCode);
-    Cookies.set('spellTrackerSS', saveCode);
+    Cookies.set('spellTrackerSS', saveCode, { expires: 99999 });
 }
 
 function readSaveCode(ssCode)
